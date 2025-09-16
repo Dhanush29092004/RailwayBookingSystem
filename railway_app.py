@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 
-# Sample train data
+
 train_data = {
     'Train': ['Shatabdi Express', 'Chennai Express', 'Vandhe Bharath', 'Duronto Express'],
     'Sleeper Seats': [100, 150, 200, 120],
@@ -10,10 +10,10 @@ train_data = {
     'AC Price': [1200, 1500, 800, 1000]
 }
 
-# Create DataFrame
+
 trains = pd.DataFrame(train_data)
 
-# Function to check seat availability
+
 def check_availability(train, class_type, num_seats):
     if train in trains['Train'].values:
         index = trains[trains['Train'] == train].index[0]
@@ -30,7 +30,7 @@ def check_availability(train, class_type, num_seats):
         print("Train not found.")
         return False
 
-# Function to book tickets
+
 def book_tickets(train, class_type, num_seats):
     if check_availability(train, class_type, num_seats):
         index = trains[trains['Train'] == train].index[0]
@@ -47,9 +47,9 @@ def book_tickets(train, class_type, num_seats):
     else:
         print("Booking failed. Seats not available.")
 
-# Example usage
+
 book_tickets('Shatabdi Express', 'AC', 2)
 book_tickets('Chennai Express', 'Sleeper', 5)
 
-# Display updated train availability
+
 print("\nUpdated Train Availability:\n", trains)
